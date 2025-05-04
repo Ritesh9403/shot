@@ -1,0 +1,40 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = pd.read_csv("C:\\Users\\sspm\\Downloads\\titanic.csv")
+df
+df[:4]
+df.shape
+df.describe()
+df.describe(include='object')
+df.isnull().sum()
+df['Age']=df['Age'].fillna(np.mean(df['Age']))
+df['Cabin'] = df['Cabin'].fillna(df['Cabin'].mode()[0])
+df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
+df.isnull().sum()
+sns.countplot(df['Survived']) 
+sns.countplot(df['Pclass'])
+sns.countplot(df['Embarked'])
+sns.countplot(df['Sex'])
+sns.boxplot(df['Age'])
+sns.boxplot(df['Fare'])
+sns.boxplot(df['Pclass'])
+sns.boxplot(df['SibSp'])
+sns.catplot(x= 'Pclass', y = 'Age', data=df, kind = 'violin')
+sns.catplot(x= 'Pclass', y = 'Fare', data=df, kind = 'strip')
+sns.catplot(x= 'Sex', y = 'Fare', data=df, kind = 'strip')
+
+sns.catplot(x= 'Sex', y = 'Age', data=df, kind = 'strip')
+sns.pairplot(df)
+sns.scatterplot(x = 'Fare', y = 'Pclass', hue = 'Survived', data = df)
+sns.scatterplot(x = 'Survived', y = 'Fare', data = df)
+sns.distplot(df['Age'])
+sns.distplot(df['Fare'])
+sns.jointplot(x = "Survived", y = "Fare", kind = "scatter", data = df)
+sns.heatmap(tc, cmap="YlGnBu")
+tc = df.corr()
+plt.title('Correlation')
+sns.catplot(x='Pclass', y='Fare', data=df, kind='bar')
