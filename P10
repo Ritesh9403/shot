@@ -1,0 +1,20 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df=pd.read_csv("C:\\Users\sspm-engg\Documents\\\iris.csv")
+df[:3]
+df.head()
+df.describe()
+df.describe(include='object')
+df.isnull().sum()
+dtype: int64
+print("\n\n The features in the dataset are as follows : ")
+print("1.Sepal length : ",df['sepal_length'].dtype)
+print("2.Sepal width : ",df['sepal_width'].dtype)
+print("3.Petal length : ",df['petal_length'].dtype)
+print("4.Petal width : ",df['petal_width'].dtype)
+print("5.Species : ",df['species'].dtype)
+
