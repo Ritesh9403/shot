@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+df= pd.read_csv('C:\\Users\sspm\Downloads\Iris_data_sample.csv')
+df
+df[["SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm"]].mean()
+dtype: float64
+df[["SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm"]].median()
+dtype: float64
+df[["SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm"]].max()
+dtype: float64
+df[["SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm"]].min()
+dtype: float64
+df[["SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm"]].std()
+dtype: float64
+df.groupby("Species").describe().sum()
+dtype: float64
+df.groupby("Species").describe()
