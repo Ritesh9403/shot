@@ -1,0 +1,9 @@
+import pandas as pd
+df = pd.read_csv("C:\\Users\sspm\Downloads\\sample_weather.txt" )
+df
+avg_temp = df["Temperature"].mean()
+avg_dew_point = df["Dew Point"].mean()
+avg_wind_speed = df["Wind Speed"].mean()
+print(f"Average Temperature: {avg_temp:.2f}°C")
+print(f"Average Dew Point: {avg_dew_point:.2f}°C")
+print(f"Average Wind Speed: {avg_wind_speed:.2f} km/h")
