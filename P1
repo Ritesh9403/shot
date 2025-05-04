@@ -1,0 +1,19 @@
+import pandas as pd 
+import numpy as ny 
+df=pd.read_csv('iris.csv') 
+df.describe() 
+df.isnull() 
+df.notnull() 
+df.dtypes 
+df.size 
+df.ndim 
+df.shape 
+df.info 
+categorical_columns=df.select_dtypes(include=['object','category']).columns 
+print(categorical_columns) Index([], dtype='object') 
+label_encoded_df=df.copy() 
+for col in categorical_columns: label_encoded_df[col]=label_encoded_df[col].astype('category').cat.codes 
+print(label_encoded_df.head()) 
+df['setosa']=df['setosa'].astype(int) 
+df.dtypes 
+df.boxplot() 
