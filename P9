@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=pd.read_csv('C:\\Users\sspm-engg\Documents\\titanic.csv')
+df.head()
+df.describe()
+df.info()
+dtypes: float64(2), int64(5), object(5)
+df.isnull().sum()
+dtype: int64
+df['Age']=df['Age'].fillna(np.mean(df['Age']))
+df['Cabin']=df['Cabin'].fillna(df['Cabin'].mode()[0])
+df['Embarked']=df['Embarked'].fillna(df['Embarked'].mode()[0])
+df.isnull().sum()
+dtype: int64
+plt.show()
